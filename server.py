@@ -10,6 +10,9 @@ def sent_analyzer():
 
     response = emotion_detector(text_to_analyze)
 
+    if response["dominant_emotion"] is None:
+        return "Invalid text! Please try again!"
+
     # Extract the label and score from the response 
     anger = response["anger"]
     disgust = response["disgust"]
